@@ -8,6 +8,6 @@ def get_demo_table_list():
 
   
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-  back_from_function = get_demo_table_list()
-  my_cnx.close()
-  streamlit.text(back_from_function)
+back_from_function = get_demo_table_list()
+my_cnx.close()
+streamlit.text(back_from_function)
