@@ -1,4 +1,5 @@
 import streamlit
+import pandas as pd
 import snowflake.connector
   
 def get_demo_table_list():
@@ -10,7 +11,9 @@ def get_demo_table_list():
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 back_from_function = get_demo_table_list()
 my_cnx.close()
-streamlit.dataframe(back_from_function)
+
+df = pd.dataframe(back_from_function, columns=['First', 'Last', 'Age'])
+streamlit.dataframe(df)
 
 
-streamlit.table(back_from_function)
+streamlit.table(df)
