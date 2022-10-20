@@ -1,5 +1,5 @@
-import snowflake.connector
 import streamlit
+import snowflake.connector
   
 def get_demo_table_list():
   with my_cnx.cursor() as my_cur:
