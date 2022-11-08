@@ -32,11 +32,12 @@ df_transactions = pd.DataFrame(back_from_transactions, columns=['transactionDate
 # df_transactions['year'] = df_transactions['transactionDate'].dt.to_period('M')
 streamlit.table(df_transactions)
 
-# filt = (df_transactions['transactionMonth'].unique().tolist())
-# df_months_represented = df_transactions[filt]
 
 df_m_rep = pd.DataFrame(df_transactions['transactionMonth'].unique().tolist())
 
 streamlit.write(df_m_rep.values.tolist())
 
-# streamlit.table(df_months_represented)
+filt = (df_m_rep.values.tolist())
+df_months_represented = df_transactions[filt]
+
+streamlit.table(df_months_represented)
