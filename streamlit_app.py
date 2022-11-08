@@ -36,3 +36,5 @@ streamlit.table(df_transactions)
 df_months_represented = df_transactions['transactionMonth'].unique()
 
 streamlit.table(df_months_represented)
+
+streamlit.table(df_transactions['transactionMonth'].unique())
