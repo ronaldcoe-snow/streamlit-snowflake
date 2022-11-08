@@ -32,9 +32,7 @@ df_transactions = pd.DataFrame(back_from_transactions, columns=['transactionDate
 # df_transactions['year'] = df_transactions['transactionDate'].dt.to_period('M')
 streamlit.table(df_transactions)
 
-
-df_months_represented = df_transactions.loc[(df_transactions['transactionMonth'] == df_transactions['transactionMonth'].unique())]
+filt = (df_transactions['transactionMonth'].unique())
+df_months_represented = df_transactions[filt]
 
 streamlit.table(df_months_represented)
-
-streamlit.table(df_transactions['transactionMonth'].unique())
