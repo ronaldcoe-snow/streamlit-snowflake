@@ -28,7 +28,8 @@ my_cnx.close()
 
 
 
-df_transactions = pd.DataFrame(back_from_transactions, columns=['transactionDate', 'transactionDescription'])
+df_transactions = pd.DataFrame(back_from_transactions, columns=['transactionDate', 'transactionDescription', 'transactionYear'])
+df_transactions['year'] = df_transactions['transactionDate'].dt.to_period('M')
 streamlit.table(df_transactions)
 
 
