@@ -33,7 +33,7 @@ df_transactions = pd.DataFrame(back_from_transactions, columns=['transactionDate
 streamlit.table(df_transactions)
 
 
-df_m_rep = pd.DataFrame(df_transactions['transactionMonth'].unique().tolist(), columns = ['transactionDate'])
+df_m_rep = pd.DataFrame(df_transactions['transactionMonth'].unique().tolist(), columns = ['transactionMonth'])
 
 streamlit.write(df_m_rep.values.tolist())
 
