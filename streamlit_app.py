@@ -9,7 +9,7 @@ def get_demo_table_list():
 
 def get_demo_transaction_list():
   with my_cnx.cursor() as my_cur_transactions:
-      my_cur_transactions.execute("SELECT * FROM TRANSACTION_HISTORY")
+      my_cur_transactions.execute("SELECT *, YEAR(transactionDate) as transactionYear FROM TRANSACTION_HISTORY")
       return my_cur_transactions.fetchall()
 
 
@@ -29,7 +29,7 @@ my_cnx.close()
 
 
 df_transactions = pd.DataFrame(back_from_transactions, columns=['transactionDate', 'transactionDescription', 'transactionYear'])
-df_transactions['year'] = df_transactions['transactionDate'].dt.to_period('M')
+# df_transactions['year'] = df_transactions['transactionDate'].dt.to_period('M')
 streamlit.table(df_transactions)
 
 
