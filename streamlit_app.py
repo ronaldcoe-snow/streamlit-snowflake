@@ -37,6 +37,6 @@ streamlit.table(df_transactions)
 
 df_m_rep = df_transactions['transactionMonth'].unique().tolist()
 
-streamlit.table(df_m_rep.values.tolist())
+streamlit.table(df_m_rep.tolist())
 
 # streamlit.table(df_months_represented)
