@@ -9,7 +9,7 @@ def get_demo_table_list():
 
 def get_demo_transaction_list():
   with my_cnx.cursor() as my_cur_transactions:
-      my_cur_transactions.execute("SELECT *, YEAR(transactionDate) as transactionYear FROM TRANSACTION_HISTORY")
+      my_cur_transactions.execute("SELECT *, YEAR(t_date) as transactionYear FROM TRANSACTION_HISTORY")
       return my_cur_transactions.fetchall()
 
 
