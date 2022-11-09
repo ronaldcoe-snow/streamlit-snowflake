@@ -86,7 +86,9 @@ if len(t_sel) == 2:
   c1.subheader("Year One: " + str(t_sel[0]))
   c2.subheader("Year Two: " + str(t_sel[1]))
   with c1:
-    streamlit.write(t_sel[0])
+    filt_c1 = (df_transactions['transactionYear'] == t_sel[0])
+    streamlit.table(df_transactions[filt_c1])
 
   with c2:
-    streamlit.write(t_sel[1])
+    filt_c2 = (df_transactions['transactionYear'] == t_sel[1])
+    streamlit.table(df_transactions[filt_c2])
