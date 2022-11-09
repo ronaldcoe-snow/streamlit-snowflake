@@ -12,6 +12,11 @@ def get_demo_transaction_list():
       my_cur_transactions.execute("SELECT *, YEAR(t_date) as transactionYear, MONTH(t_date) as transactionMonth FROM TRANSACTION_HISTORY")
       return my_cur_transactions.fetchall()
 
+def get_demo_transaction_list_w_param_year(the_year):
+  with my_cnx.cursor() as my_cur_transactions:
+      my_cur_transactions.execute("SELECT *, YEAR(t_date) as transactionYear, MONTH(t_date) as transactionMonth FROM TRANSACTION_HISTORY")
+      return my_cur_transactions.fetchall()
+
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 back_from_function = get_demo_table_list()
@@ -60,7 +65,10 @@ t_years = df_sl_years_0['transactionYear'].values.tolist()
 
 streamlit.write(t_years)
 
-streamlit.selectbox("The Year: ", df_sl_years)
+my_option = streamlit.selectbox("The Year: ", df_sl_years)
+
+filt_one = (df_transactions['transactionYear'].isin(my_option))
+streamlit.table(df_transactions[filt_one])
 
 streamlit.write(t_years)
 
