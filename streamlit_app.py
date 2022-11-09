@@ -53,9 +53,9 @@ df_sl_years = df_months_represented['transactionYear'].drop_duplicates()
 df_sl_years_0 = df_sl_years.to_frame()
 df_sl_years_0.set_index(['transactionYear'], inplace=True)
 
-streamlit.table(df_sl_years)
+streamlit.table(df_sl_years_0)
 
-t_years = df_sl_years['transactionYear'].values.tolist()
+t_years = df_sl_years_0['transactionYear'].values.tolist()
 
 streamlit.write(t_years)
 
