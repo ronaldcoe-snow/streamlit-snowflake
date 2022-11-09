@@ -35,9 +35,9 @@ streamlit.table(df_transactions)
 
 df_m_rep = pd.DataFrame(df_transactions['transactionMonth'].unique().tolist(), columns = ['transactionMonth'])
 
-streamlit.write(df_m_rep.values.tolist())
 
 filt = (df_m_rep.values.tolist())
-df_months_represented = df_transactions[filt]
+streamlit.write(filt[0])
+df_months_represented = df_transactions[filt[0]]
 
 streamlit.table(df_months_represented)
