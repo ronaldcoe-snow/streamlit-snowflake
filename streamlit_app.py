@@ -49,4 +49,4 @@ streamlit.table(df_months_represented.drop_duplicates(subset='transactionMonth')
 
 streamlit.table(df_months_represented.drop_duplicates(subset='transactionYear'))
 
-streamlit.write(df_months_represented.drop_duplicates(subset='transactionYear').tolist())
+streamlit.write(df_months_represented['transactionYear'].drop_duplicates(subset='transactionYear')
