@@ -74,3 +74,4 @@ streamlit.write(t_years)
 
 streamlit.write(t_years)
 
+streamlit.multiselect("What Years to compare?", df_sl_years)
