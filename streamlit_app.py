@@ -38,6 +38,6 @@ df_m_rep = pd.DataFrame(df_transactions['transactionMonth'].unique().tolist(), c
 
 filt = (df_m_rep['transactionMonth'].values.tolist())
 streamlit.write(filt)
-df_months_represented = pd.DataFrame(df_transactions[filt], columns = ['transactionMonth'])
+df_months_represented = pd.DataFrame(df_transactions[filt], columns=['transactionDate', 'transactionDescription', 'transactionYear', 'transactionMonth'])
 
 streamlit.write(df_months_represented)
