@@ -40,4 +40,4 @@ filt = (df_transactions['transactionMonth'].isin(df_m_rep['transactionMonth'].va
 streamlit.write(filt)
 df_months_represented = pd.DataFrame(df_transactions[filt], columns=['transactionDate', 'transactionDescription', 'transactionYear', 'transactionMonth'])
 
-streamlit.write(df_months_represented)
+streamlit.table(df_months_represented)
