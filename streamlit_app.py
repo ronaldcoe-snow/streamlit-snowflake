@@ -41,5 +41,3 @@ streamlit.write(filt)
 df_months_represented = pd.DataFrame(df_transactions[filt], columns = ['transactionMonth'])
 
 streamlit.write(df_months_represented)
-
-streamlit.table(df_months_represented)
