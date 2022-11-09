@@ -61,3 +61,8 @@ t_years = df_sl_years_0['transactionYear'].values.tolist()
 streamlit.write(t_years)
 
 streamlit.selectbox("The Year: ", df_sl_years)
+
+streamlit.write(t_years)
+
+streamlit.write(t_years)
+
