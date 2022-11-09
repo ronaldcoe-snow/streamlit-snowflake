@@ -51,7 +51,8 @@ streamlit.table(df_months_represented.drop_duplicates(subset='transactionYear'))
 
 df_sl_years = df_months_represented['transactionYear'].drop_duplicates()
 df_sl_years_0 = df_sl_years.to_frame().reset_index()
-df_sl_years_0.set_index(['transactionYear'], inplace=True)
+df_sl_years_0 = df_sl_years_0.rename(columns={0: 'transactionYear'})
+# df_sl_years_0.set_index(['transactionYear'], inplace=True)
 
 streamlit.table(df_sl_years_0)
 
