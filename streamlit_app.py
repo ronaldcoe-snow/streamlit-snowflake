@@ -48,3 +48,5 @@ df_months_represented = pd.DataFrame(df_transactions[filt_m], columns=['transact
 streamlit.table(df_months_represented.drop_duplicates(subset='transactionMonth'))
 
 streamlit.table(df_months_represented.drop_duplicates(subset='transactionYear'))
+
+streamlit.write(df_months_represented.drop_duplicates(subset='transactionYear').tolist())
