@@ -40,4 +40,6 @@ filt = (df_m_rep.values.tolist())
 streamlit.write(filt[0])
 df_months_represented = df_transactions[filt[0]]
 
+streamlit.write(df_months_represented)
+
 streamlit.table(df_months_represented)
