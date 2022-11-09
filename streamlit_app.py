@@ -53,4 +53,8 @@ df_sl_years = df_months_represented['transactionYear'].drop_duplicates()
 
 streamlit.table(df_sl_years)
 
+t_years = df_sl_years['transactionYear'].tolist()
+
+streamlit.write(t_years)
+
 # streamlit.slider("The Year: ", value=df_sl_years['transactionYear'])
