@@ -83,8 +83,8 @@ streamlit.write(len(t_sel))
 if len(t_sel) == 2:
   c1, c2 = streamlit.columns(2)
 
-  c1.subheader("Year One")
-  c2.subheader("Year Two")
+  c1.subheader("Year One: " + t_sel[0])
+  c2.subheader("Year Two: " + t_sel[1])
   with c1:
     streamlit.write(t_sel[0])
 
