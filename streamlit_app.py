@@ -79,3 +79,11 @@ t_sel = streamlit.multiselect("What Years to compare?", df_sl_years, max_selecti
 streamlit.write(t_sel)
 
 streamlit.write(len(t_sel))
+
+if len(t_sel) == 2:
+  c1, c2 = streamlit.columns(2)
+  with c1:
+    streamlit.write(t_sel[0])
+
+  with c2:
+    streamlit.write(t_sel[1])
